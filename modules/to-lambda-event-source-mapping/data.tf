@@ -9,6 +9,7 @@ data "aws_iam_policy_document" "lambda-triggable-from-sqs" {
       "sqs:DeleteMessage",
       "sqs:GetQueueAttributes",
       "sqs:ReceiveMessage",
+      "sqs:GetQueueUrl",
     ]
   }
 }

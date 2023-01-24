@@ -14,4 +14,6 @@ module "lambda-event-source-mapping" {
   queue            = module.queue.arn
   lambda_arn       = var.lambda_arn
   lambda_role_name = var.lambda_role_name
+  batch_size       = var.batch_size
+  maximum_batching_window_in_seconds = var.maximum_batching_window_in_seconds
 }

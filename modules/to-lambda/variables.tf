@@ -31,3 +31,11 @@ variable "fifo_queue" {
   type    = bool
   default = null
 }
+variable "batch_size" {
+  type    = number
+  default = 1
+}
+variable "maximum_batching_window_in_seconds" {
+  type    = number
+  default = null
+}

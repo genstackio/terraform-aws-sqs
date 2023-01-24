@@ -1,9 +1,10 @@
 resource "aws_lambda_event_source_mapping" "queue-event-source-mapping" {
   count             = var.enabled ? 1 : 0
-  batch_size        = 1
+  batch_size        = var.batch_size
   event_source_arn  = var.queue
   enabled           = true
   function_name     = var.lambda_arn
+  maximum_batching_window_in_seconds = var.maximum_batching_window_in_seconds
 }
 
 resource "aws_iam_role_policy" "lambda-triggable-from-sqs" {

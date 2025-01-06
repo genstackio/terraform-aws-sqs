@@ -25,3 +25,11 @@ variable "fifo_queue" {
   type    = bool
   default = null
 }
+variable "content_based_deduplication" {
+  type    = bool
+  default = null
+}
+variable "deduplication_scope" {
+  type    = bool
+  default = null
+}

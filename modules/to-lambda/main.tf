@@ -19,4 +19,5 @@ module "lambda-event-source-mapping" {
   batch_size          = var.batch_size
   maximum_concurrency = var.maximum_concurrency
   maximum_batching_window_in_seconds = var.maximum_batching_window_in_seconds
+  function_response_types = var.function_response_types
 }

@@ -23,3 +23,7 @@ variable "maximum_concurrency" {
   type    = number
   default = null
 }
+variable "function_response_types" {
+  type    = list(string)
+  default = null
+}

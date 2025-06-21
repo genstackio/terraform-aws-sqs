@@ -12,10 +12,11 @@ module "queue" {
 }
 
 module "lambda-event-source-mapping" {
-  source           = "../to-lambda-event-source-mapping"
-  queue            = module.queue.arn
-  lambda_arn       = var.lambda_arn
-  lambda_role_name = var.lambda_role_name
-  batch_size       = var.batch_size
+  source              = "../to-lambda-event-source-mapping"
+  queue               = module.queue.arn
+  lambda_arn          = var.lambda_arn
+  lambda_role_name    = var.lambda_role_name
+  batch_size          = var.batch_size
+  maximum_concurrency = var.maximum_concurrency
   maximum_batching_window_in_seconds = var.maximum_batching_window_in_seconds
 }

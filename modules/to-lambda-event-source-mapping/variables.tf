@@ -19,3 +19,7 @@ variable "maximum_batching_window_in_seconds" {
   type    = number
   default = null
 }
+variable "maximum_concurrency" {
+  type    = number
+  default = null
+}

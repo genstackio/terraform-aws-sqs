@@ -5,6 +5,12 @@ resource "aws_lambda_event_source_mapping" "queue-event-source-mapping" {
   enabled           = true
   function_name     = var.lambda_arn
   maximum_batching_window_in_seconds = var.maximum_batching_window_in_seconds
+  dynamic scaling_config {
+    for_each = null != var.maximum_concurrency ? [true] : []
+    content {
+      maximum_concurrency = var.maximum_concurrency
+    }
+  }
 }
 
 resource "aws_iam_role_policy" "lambda-triggable-from-sqs" {

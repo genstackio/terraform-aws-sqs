@@ -47,3 +47,7 @@ variable "deduplication_scope" {
   type    = bool
   default = null
 }
+variable "maximum_concurrency" {
+  type    = number
+  default = null
+}
